@@ -250,7 +250,7 @@ div.informacion-evento p {
 }
 @media only screen and (max-width: 480px) {
   div.informacion-evento p {
-    padding: 0 10px 0 10px;
+    padding: 20px 10px 0 10px;
     font-size: 1.5em;
   }
 }
@@ -688,7 +688,6 @@ div.cuenta-regresiva ul li {
     float: left;
   }
 }
-
 /**Footer**/
 footer.site-footer {
   background-color: #353535;
@@ -730,12 +729,119 @@ p.copyright {
   font-size: 1.5rem;
 }
 
+/**Internas**/
 
+/**Registros**/
+form.registro h3 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0 0 0 ;
 
+}
+form.registro label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+h4 {
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 2px solid #fe4918;
+  padding: 10px;
+  font-size: 1.2em;
+}
+div.caja {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  margin: 10px;
+}
+div.campo {
+  padding: 18px;
 
+}
+@media (min-width: 768px) {
+  div.campo {
+    float: left;
+    width: 33.3%;
+  }
+}
+div.paquetes .tabla-precios input {
+  clear: both;
+  width: 100px;
+  margin: 10px auto 0 auto;
+  display: block;
+}
+.contenido-dia {
+  padding: 20px;
+  display:none;
+}
+@media (min-width: 768px) {
+  .contenido-dia > div {
+    float: left;
+    width: 33.3%;
+  }
+}
+.contenido-dia > div p {
+  text-align: left;
+}
+.contenido-dia > div label {
+  display: block;
+  margin-bottom: 10px;
+}
+.contenido-dia > div input {
+  margin-right: 10px;
+}
+.contenido-dia > div label time {
+  color: #fe4918;
+  font-weight: bold;
+}
+/*resumen registro */
 
+.resumen p {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
 
-
+.resumen .extras {
+float: left;
+width: 50%;
+padding: 30px;
+}
+.resumen .extras .orden {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.extras .orden input {
+  margin: 10px 0 0 0;
+}
+.resumen .total {
+  float: right;
+  width: 50%;
+  padding: 30px;}
+.resumen input {
+  display: block;
+  margin: 10px auto;
+}
+#lista-productos {
+  text-align: center;
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+}
+#suma-total {
+  text-align: center;
+  font-size: 2em;
+  color: #fe4918;
+}
+#error {
+  clear: both;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1.2em;
+  display: none;
+}
 
 
 
