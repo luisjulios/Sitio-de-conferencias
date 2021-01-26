@@ -36,7 +36,9 @@
         let camisas = document.getElementById('camisa_evento');
         let etiquetas = document.getElementById('etiquetas');
 
-
+        if (document.getElementById('calcular')) {
+            
+        
 
         calcular.addEventListener('click', calcularMontos);
         pase_dia.addEventListener('blur', mostrarDias);
@@ -136,6 +138,8 @@
             }
         }
 
+    }
+
     }); //DOM CONTENT LOADED
 })();
 
@@ -144,6 +148,29 @@ $(function() {
 
     //Lettering
     $('.nombre-sitio').lettering();
+
+    //Menú fijo
+    var windowHeight = $(window).height();
+    var barraAltura = $('.barra').innerHeight();
+
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if(scroll > windowHeight) {
+            $('.barra').addClass('fixed');
+            $('body').css({'margin-top': barraAltura+'px'});
+        } else {
+            $('.barra').removeClass('fixed');
+            $('body').css({'margin-top': '0px'});
+
+        }
+    });
+
+    //Menú Responsive
+    $('.menu-movil').on('click', function() {
+        $('.navegacion-principal').slideToggle();
+    });
+    
+
 
     
     //Programa del evento
@@ -162,10 +189,18 @@ $(function() {
 
     //Animaciones para los números
 
-    $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
-    $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 1200);
-    $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 1500);
-    $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
+    var resumenLista = jQuery('.resumen-evento');
+    if (resumenLista.length > 0){
+        $('.resumen-evento').waypoint(function() {
+            $('.resumen-evento li:nth-child(1) p').animateNumber({number: 6}, 1200);
+            $('.resumen-evento li:nth-child(2) p').animateNumber({number: 15}, 1200);
+            $('.resumen-evento li:nth-child(3) p').animateNumber({number: 3}, 1500);
+            $('.resumen-evento li:nth-child(4) p').animateNumber({number: 9}, 1500);
+        }, {
+            offset: '60%'
+        });
+    }
+    
 
     //Cuenta Regresiva
     $('.cuenta-regresiva').countdown('2021/12/16 00:00:00', function(event) {

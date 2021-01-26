@@ -320,6 +320,13 @@ div.barra {
   background-color: #353535;
   padding: 20px 0;
 }
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
 div.logo {
   width: 80%;
   float: left;
@@ -335,6 +342,7 @@ div.logo img {
 /**Navegacion principal**/
 nav.navegacion-principal {
   display: none;
+  width: 100%;
 }
 
 nav.navegacion-principal a {
@@ -348,6 +356,7 @@ nav.navegacion-principal a {
   display: block;
   text-align: center;
   margin-bottom: 20px;
+  clear: both;
 }
 nav.navegacion-principal a:hover {
   background-color: #fe4918;
@@ -790,6 +799,15 @@ p.copyright {
 }
 
 /**Internas**/
+/**Conferencias**/
+body.conferencia .navegacion-principal .activo {
+  border-bottom: 5px solid #fe4918;
+}
+.galeria a {
+  display: inline-block;
+  margin: 8px;
+}
+
 
 /**Registros**/
 form.registro h3 {
@@ -902,6 +920,7 @@ padding: 30px;
   font-size: 1.2em;
   display: none;
 }
+
 
 
 
