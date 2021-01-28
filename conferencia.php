@@ -43,6 +43,7 @@
           <img src="img/galeria/thumbs/10.jpg" alt="imagen 1">
         </a>
         
+        
       </div>
 
     </section>
