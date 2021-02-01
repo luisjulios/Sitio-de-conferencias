@@ -4,16 +4,7 @@
 
     document.addEventListener('DOMContentLoaded', function(){
 
-        var map = L.map('mapa').setView([-33.417759, -70.605977], 17);
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        L.marker([-33.417759, -70.605977]).addTo(map)
-            .bindPopup('GDLWEBCAMP 2020.<br> Tickets ya disponibles.')
-            .openPopup();
-            //.bindTooltip('GDLWEBCAMP 2020.<br> Tickets ya disponibles.');
 
         //Campos Datos Usuarios
         let nombre = document.getElementById('nombre');
@@ -139,6 +130,17 @@
         }
 
     }
+    
+    var map = L.map('mapa').setView([-33.417759, -70.605977], 17);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([-33.417759, -70.605977]).addTo(map)
+        .bindPopup('GDLWEBCAMP 2020.<br> Tickets ya disponibles.')
+        .openPopup();
+        //.bindTooltip('GDLWEBCAMP 2020.<br> Tickets ya disponibles.');
 
     }); //DOM CONTENT LOADED
 })();
@@ -148,6 +150,12 @@ $(function() {
 
     //Lettering
     $('.nombre-sitio').lettering();
+
+    //Agregar clase a menú
+
+    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+    $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+    $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
 
     //Menú fijo
     var windowHeight = $(window).height();
@@ -211,5 +219,7 @@ $(function() {
 
     });
 
+    //colorbox
+    $('.invitado-info').colorbox({inline:true, width:"30%"});
     return false;
 });

@@ -210,15 +210,15 @@ h1.nombre-sitio span {
   position: relative;
   text-shadow: 0 0 30px black;
   display: inline-block;
-  -webkit-transform: rotate(-17deg);
+  transform: rotate(-17deg);
 }
 
-@media (min-width: 992px) {
+/*@media (min-width: 992px) {
   .char1 {
     top: 20px; right: 20px;
   }
   .char2 {
-    top: 0px right: -20px;
+    top: 0px; right: -20px;
   }
   .char3 {
     top: 10px; right: 20px;
@@ -520,11 +520,11 @@ div.invitado img {
   max-width: 100%;
   filter: gray;
   -webkit-filter: grayscale(1);
-  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 div.invitado:hover img {
-  -webkit-filter: grayscale(0);
-  -webkit-transform: scale(1.1);
+  filter: grayscale(0);
+  transform: scale(1.1);
 }
 div.invitado p {
   position: absolute;
@@ -668,7 +668,7 @@ blockquote {
   position: relative;
   margin: 0 20px 10px 20px;
   padding-bottom: 20px;
-  -webkit-box-shadow: 20px 20px 30px #999999;
+  box-shadow: 20px 20px 30px #999999;
 }
 blockquote p {
   text-align: justify!important;
@@ -800,13 +800,17 @@ p.copyright {
 
 /**Internas**/
 /**Conferencias**/
-body.conferencia .navegacion-principal .activo {
+.navegacion-principal .activo {
   border-bottom: 5px solid #fe4918;
 }
 .galeria a {
   display: inline-block;
   margin: 8px;
 }
+div.galeria img {
+  width: 200px;
+}
+
 
 
 /**Registros**/
@@ -920,11 +924,60 @@ padding: 30px;
   font-size: 1.2em;
   display: none;
 }
+/**Calendario**/
+div.calendario h3 {
+  background-color: #fe4918;
+  clear: both;
+  color: white;
+  text-align: center;
+  padding-top: 10px 0;
+}
+div.calendario::after {
+  clear: both;
+  display: block;
+  content: '';
+}
+
+div.dia {
+  width: 50%;
+  float: left;
+  border: 2px solid #e1e1e1;
+  border-radius: 15px;
+  transition: all .5s ease;
+}
+@media (min-width: 768px) {
+  div.dia {
+    width: 33.3%;
+    min-height: 240px;
+    padding-top: 20px;
+  }
+}
+div.dia:hover {
+  background-color: #e1e1e1;
+  transform: scale(1.1);
+}
+div.dia p.titulo {
+  color: #fe4918;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+div.dia p{
+  font-size: 1em;
+}
+div.dia i {
+  color: #fe4918;
+  font-size: 1.5em;
+}
 
 
-
-
-
+/*colorbox*/
+div.cboxElement {
+  padding: 30px!important;
+  text-align: center;
+}
+div.cboxElement img {
+  border-radius: 5%;
+}
 
 
 

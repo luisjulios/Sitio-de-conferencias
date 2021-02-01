@@ -1,5 +1,4 @@
-<?php include_once 'includes/templates/header.php';?>
-
+<?php include_once 'includes/templates/header.php'; ?>
     <section class="seccion contenedor">
         <h2>Registro de Usuarios</h2>
         <form id="registro" class="registro" action="index.html" method="POST">
@@ -178,7 +177,4 @@
             
         </form>
     </section>
-
-
-
-    <?php include_once 'includes/templates/footer.php';?>
+    <?php include_once "includes/templates/footer.php"; ?>
