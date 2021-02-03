@@ -210,7 +210,7 @@ h1.nombre-sitio span {
   position: relative;
   text-shadow: 0 0 30px black;
   display: inline-block;
-  transform: rotate(-17deg);
+  /*transform: rotate(-50deg);*/
 }
 
 /*@media (min-width: 992px) {
@@ -250,7 +250,7 @@ h1.nombre-sitio span {
 /**header**/
 div.hero {
   background-image: url(../img/encabezado.jpg);
-  height: 100vh;
+  height: 50vh;
   background-position: top center;
   background-size: cover;
   }
@@ -325,7 +325,7 @@ div.barra {
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 1;
 }
 div.logo {
   width: 80%;
@@ -876,6 +876,9 @@ div.paquetes .tabla-precios input {
 .contenido-dia > div label time {
   color: #fe4918;
   font-weight: bold;
+}
+input[disabled].button {
+  opacity: .5;
 }
 /*resumen registro */
 

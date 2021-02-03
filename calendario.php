@@ -57,7 +57,7 @@
                   <?php echo $evento['fecha'] . " " . $evento['hora']; ?>
                 </p>
                 <p>
-                <i class="fa fa-code" aria-hidden="true"></i>
+                <i class="<?php echo $evento['icono']?>" aria-hidden="true"></i>
                   <?php echo $evento['categoria']; ?>
                 </p>
                 <p>
@@ -69,9 +69,7 @@
           <?php }	// fin de foreach de dias ?>
       </div>
 
-      <?php
-        $conn->close();
-      ?>
+      <?php $conn->close(); ?>
 
     </section>
 
