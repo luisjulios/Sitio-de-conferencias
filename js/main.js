@@ -3,9 +3,6 @@
     let regalo = document.getElementById('regalo');
 
     document.addEventListener('DOMContentLoaded', function(){
-
-
-
         //Campos Datos Usuarios
         let nombre = document.getElementById('nombre');
         let apellido = document.getElementById('apellido');
@@ -223,6 +220,7 @@ $(function() {
     });
 
     //colorbox
-    $('.invitado-info').colorbox({inline:true, width:"30%"});
-    return false;
+    $('.invitado-info').colorbox({inline:true, width:"30%"});    
+    $('.button_newsletter').colorbox({inline:true, width:"50%"});
+
 });
