@@ -1,6 +1,6 @@
 <?php 
 require 'paypal/autoload.php';
-define('URL_SITIO', 'http://localhost:8888/GDLWEBCAMP/');
+define('URL_SITIO', 'http://localhost/GDLWEBCAMP/');
 $apiContext = new \PayPal\Rest\ApiContext(
   new \PayPal\Auth\OAuthTokenCredential(
     //ClienteID

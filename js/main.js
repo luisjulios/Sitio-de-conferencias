@@ -24,8 +24,9 @@
         let camisas = document.getElementById('camisa_evento');
         let etiquetas = document.getElementById('etiquetas');
 
-        botonRegistro.disabled = true;
-
+        if(botonRegistro) {
+        botonRegistro.disabled=true; //Deshabilitamos botón de pagar
+        }
         if (document.getElementById('calcular')) {
             
         
@@ -220,7 +221,7 @@ $(function() {
     });
 
     //colorbox
-    $('.invitado-info').colorbox({inline:true, width:"30%"});    
+    $('.invitado-info').colorbox({inline:true, width:"30%"});
     $('.button_newsletter').colorbox({inline:true, width:"50%"});
 
 });

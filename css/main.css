@@ -988,6 +988,23 @@ div #mc_embed_signup {
   text-align: center;
 }
 
+.resultado {
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 15px;
+  font-size: 1.5rem;
+}
+
+.correcto {
+  background-color: #fe4918;
+}
+.error {
+  background-color: #2e2e2e;
+}
+
 
 /* ==========================================================================
    Helper classes

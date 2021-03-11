@@ -7,7 +7,7 @@
         $fecha = date('Y-m-d H:i:s');
         $boletos = $_POST['boletos'];
         $camisas = $_POST['pedido_extra'];
-        $etiquetas = $_POST['pedido_extra'];
+        $etiquetas = $_POST['pedido_etiquetas'];
         include_once 'includes/funciones/funciones.php';
         $pedido = productos_json($boletos, $camisas, $etiquetas);
         $eventos = $_POST['registro'];
