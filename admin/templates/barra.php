@@ -1,4 +1,4 @@
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini" >
 <!-- Site wrapper -->
 <div class="wrapper">
 
@@ -34,7 +34,7 @@
                   <a href="#" class="btn btn-success btn-flat">Ajustes</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-success btn-flat" style="background-color: red; border: none;">Cerrar sesión</a>
+                  <a href="login.php?cerrar_sesion=true" class="btn btn-success btn-flat" style="background-color: red; border: none;">Cerrar sesión</a>
                 </div>
               </li>
             </ul>

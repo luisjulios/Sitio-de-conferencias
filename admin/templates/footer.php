@@ -22,5 +22,11 @@
     $('.sidebar-menu').tree();
   })
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="js/admin-ajax.js"></script>
+<script src="js/jquery.dataTables.min.js"></script>
+<script src="js/dataTables.bootstrap.min.js"></script>
+
+
 </body>
 </html>

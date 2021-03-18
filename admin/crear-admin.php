@@ -1,4 +1,5 @@
 <?php 
+include_once 'funciones/sesiones.php';
 include_once 'funciones/funciones.php'; 
 include_once 'templates/header.php'; 
 include_once 'templates/barra.php';
@@ -8,7 +9,7 @@ include_once 'templates/navegacion.php'
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>Crear administrador<br><small>Llena el formulario para crear un administrador.</small></h1>
+      <h1>Agregar administrador<br><small>Llena el formulario para crear un administrador.</small></h1>
     </section>
   <div class="row">
   <div class="col-md-6">
@@ -21,7 +22,7 @@ include_once 'templates/navegacion.php'
         </div>
         <div class="box-body">
             <!-- form start -->
-            <form role="form" name="crear-admin" id="crear-admin" method="POST" action="insertar-admin.php">
+            <form role="form" name="crear-admin" id="crear-admin" method="post" action="insertar-admin.php">
               <div class="box-body">
                 <div class="form-group">
                   <label for="usuario">Usuario:</label>
