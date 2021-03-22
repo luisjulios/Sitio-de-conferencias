@@ -12,7 +12,7 @@ include_once 'templates/navegacion.php'
       <h1>Agregar administrador<br><small>Llena el formulario para crear un administrador.</small></h1>
     </section>
   <div class="row">
-  <div class="col-md-6">
+  <div class="col-xs-8">
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->

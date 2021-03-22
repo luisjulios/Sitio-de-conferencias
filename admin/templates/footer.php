@@ -17,16 +17,10 @@
 <script src="js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="js/demo.js"></script>
-<script>
-  $(document).ready(function () {
-    $('.sidebar-menu').tree();
-  })
-</script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script src="js/admin-ajax.js"></script>
+<script src="js/app.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/dataTables.bootstrap.min.js"></script>
-
-
 </body>
 </html>

@@ -103,6 +103,9 @@ body {
   padding: 15px;
   color: #444;
   border-top: 1px solid #d2d6de;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 /* Fixed layout */
 .fixed .main-header,
