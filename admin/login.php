@@ -16,7 +16,7 @@ include_once 'templates/header.php';
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Inicio de administrador</p>
-    <form name="login-admin-form" id="login-admin" method="post" action="insertar-admin.php">
+    <form name="login-admin-form" id="login-admin" method="post" action="login-admin.php">
       <div class="form-group has-feedback">
         <input type="text" class="form-control" name="usuario" required placeholder="Usuario" autocomplete="username">
         <span class=" form-control-feedback"><i class="fa fa-user"></i></span>

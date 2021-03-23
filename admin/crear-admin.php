@@ -22,26 +22,35 @@ include_once 'templates/navegacion.php'
         </div>
         <div class="box-body">
             <!-- form start -->
-            <form role="form" name="crear-admin" id="crear-admin" method="post" action="insertar-admin.php">
+            <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-admin.php">
               <div class="box-body">
                 <div class="form-group">
                   <label for="usuario">Usuario:</label>
                   <input type="text" class="form-control" id="usuario" name="usuario" required placeholder="Usuario">
                 </div>
                 <div class="form-group">
-                  <label for="nombre">Nombre</label>
+                  <label for="nombre">Nombre:</label>
                   <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Nombre" autocomplete="username">
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>
+                  <label for="nivel">Nivel:</label>
+                  <input type="number" min="0" max="1" class="form-control" id="nivel" name="nivel" required value="0">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password:</label>
                   <input type="password" class="form-control" id="password" name="password" required placeholder="Password" autocomplete="current-password">
+                </div>
+                <div class="form-group">
+                  <label for="password">Repetir Password:</label>
+                  <input type="password" class="form-control" id="repetir_password" name="repetir_password" required placeholder="Password" autocomplete="current-password">
+                  <span id="resultado_password" class="help-block"></span>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <input type="hidden" name="agregar-admin" value="1">
-                <button type="submit" class="btn btn-primary">Añadir</button>
+                <input type="hidden" name="registro" value="nuevo">
+                <button type="submit" class="btn btn-primary" id="crear_registro_admin" >Añadir</button>
               </div>
             </form>        
           </div>

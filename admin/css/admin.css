@@ -22,17 +22,10 @@
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal {
-  background: rgba( 155, 155, 155, 0.55 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 2.5px );
-  -webkit-backdrop-filter: blur( 2.5px );
-  border-radius: 10px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-}
+
 
 .content-wrapper {
-  background-image: url(https://image.freepik.com/free-vector/seamless-abstract-floral-pattern-oriental-style_108964-204.jpg);
+  background-image: url(https://image.freepik.com/free-photo/gold-shiny-background-with-variating-hues_1258-28396.jpg);
 }
 ::-webkit-scrollbar{
   width: 10px;
