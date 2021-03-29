@@ -1,20 +1,13 @@
 <?php
 include_once 'funciones/funciones.php'; 
-error_reporting(E_ALL ^ E_NOTICE);
-$titulo = $_POST['titulo_evento'];
-$categoria_id = $_POST['categoria_evento'];
-$invitado_id = $_POST['invitado'];
-//Obtener la fecha y formatearla
-$fecha = $_POST['fecha_evento'];
-$fecha_formateada = date('Y-m-d', strtotime($fecha));
-//Hora
-$hora = $_POST['hora_evento'];
-$id_registro = $_POST['id_registro'];
+if(isset($_POST['nombre_categoria'])) {$nombre_categoria = $_POST['nombre_categoria'];}
+if(isset($_POST['icono'])) {$icono = $_POST['icono'];} 
+if(isset($_POST['id_registro'])) {$id_registro = $_POST['id_registro'];} 
 
 if($_POST['registro'] == 'nuevo') {
   try {
-  $stmt = $conn->prepare('INSERT INTO eventos (nombre_evento, fecha_evento, hora_evento, id_cat_evento, id_inv) VALUES (?, ?, ?, ?, ?)');
-  $stmt->bind_param('sssii', $titulo, $fecha_formateada, $hora, $categoria_id, $invitado_id);
+  $stmt = $conn->prepare('INSERT INTO categoria_evento (cat_evento, icono) VALUES (?, ?)');
+  $stmt->bind_param('ss', $nombre_categoria, $icono);
   $stmt->execute();
   $id_insertado = $stmt->insert_id;
   if ($stmt->affected_rows) {
@@ -39,8 +32,8 @@ if($_POST['registro'] == 'nuevo') {
 
 if($_POST['registro'] == 'actualizar') {
   try {  
-    $stmt = $conn->prepare('UPDATE eventos SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv  = ? WHERE evento_id = ? ');
-    $stmt->bind_param("sssiii", $titulo, $fecha_formateada, $hora, $categoria_id, $invitado_id, $id_registro);
+    $stmt = $conn->prepare('UPDATE categoria_evento SET cat_evento = ?, icono = ? WHERE id_categoria = ? ');
+    $stmt->bind_param("ssi", $nombre_categoria, $icono, $id_registro);
     $stmt->execute();
     if ($stmt->affected_rows) {
       $respuesta = array(
@@ -66,7 +59,7 @@ if($_POST['registro'] == 'actualizar') {
 if($_POST['registro'] == 'eliminar') {
   $id_borrar = $_POST['id'];
   try {
-    $stmt = $conn->prepare('DELETE FROM eventos WHERE evento_id = ? ');
+    $stmt = $conn->prepare('DELETE FROM categoria_evento  WHERE id_categoria = ? ');
     $stmt->bind_param('i', $id_borrar);
     $stmt->execute();
     if ($stmt->affected_rows) {

@@ -4,14 +4,6 @@
           <h3>Sobre <span>GdlWebCamp</span></h3>
           <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, vitae. Ratione ad voluptas excepturi ex maiores possimus veritatis nam deserunt porro commodi molestias minima a temporibus repellendus, aut deleniti dignissimos! </p>
         </div>
-        <div class="ultimos-tweets">
-          <h3>Últimos <span>Tweets</span></h3>
-          <ul>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel itaque odio magni recusandae quod, alias autem deleniti impedit sapiente error dolor nam ipsam omnis.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel itaque odio magni recusandae quod, alias autem deleniti impedit sapiente error dolor nam ipsam omnis.</li>
-            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel itaque odio magni recusandae quod, alias autem deleniti impedit sapiente error dolor nam ipsam omnis.</li>
-          </ul>
-        </div>
         <div class="menu">
           <h3>Redes <span>Sociales</span></h3>
           <nav class="redes-sociales">
@@ -70,6 +62,7 @@
   }
   ?>
   <script src="js/main.js"></script>
+  <script src="js/cotizador.js"></script>
   <script src="js/jquery.waypoints.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

@@ -60,8 +60,8 @@
             <span>Invitados</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-list-ul"></i> Ver todos</a></li>
-            <li><a href=""><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-invitados.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="crear-invitado.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -70,8 +70,8 @@
             <span>Registrados</span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>
-            <li><a href="#"><i class="fa fa-plus-circle"></i> Agregar</a></li>
+            <li><a href="lista-registrados.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
+            <li><a href="crear-registrado.php"><i class="fa fa-plus-circle"></i> Agregar</a></li>
           </ul>
         </li>
         <?php if($_SESSION['nivel'] == 1): ?>

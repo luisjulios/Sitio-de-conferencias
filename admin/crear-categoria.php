@@ -31,7 +31,7 @@ include_once 'templates/navegacion.php'
                 <div class="form-group">
                   <label for="icono">Icono:</label>
                   <div class="input-group">
-                    <div class="input-group-addon" style="background-color: black; color:  #f39c12; font-size: 25px;">
+                    <div class="input-group-addon" style="background-color: black; color:  #f39c12; font-size: 20px;">
                       <i class="fa fa-address-book"></i>
                     </div>
                     <input type="text" id="icono" name="icono" class="form-control pull-right" placeholder="Elige un icono">

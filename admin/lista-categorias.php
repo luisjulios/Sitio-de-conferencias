@@ -44,7 +44,7 @@ include_once 'templates/navegacion.php';
                   while($categoria_evento = $resultado->fetch_assoc()) { ?>
                   <tr>
                     <td><?php echo $categoria_evento['cat_evento']; ?></td>
-                    <td><i class="fa <?php echo $categoria_evento['icono']; ?>" style="background-color: #f39c12; font-size: 25px;"></i></td>
+                    <td><i class="fa <?php echo $categoria_evento['icono']; ?>" style="color: #f39c12; font-size: 20px;"></i></td>
                     <td>
                       <a href="editar-categoria.php?id=<?php echo $categoria_evento['id_categoria'];?>" class="btn bg-orange btn-flat margin" style="border-radius: 5px;"><i class="fa fa-pencil"></i></a>
                       <a href="#" data-id="<?php echo $categoria_evento['id_categoria'];?>" data-tipo="categoria" class="btn bg-red btn-flat margin borrar-registro" style="border-radius: 5px;"><i class="fa fa-trash"></i></a>
