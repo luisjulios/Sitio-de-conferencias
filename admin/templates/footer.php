@@ -21,8 +21,15 @@
 <script src="../js/cotizador.js"></script>
 <script src="js/bootstrap-datepicker.min.js"></script>
 <script src="js/select2.min.js"></script>
-<script src="js/fontawesome-iconpicker.min.js"></script>
+<script src="js/raphael.min.js"></script>
 
+<script src="js/morris.min.js"></script>
+<script src="js/fontawesome-iconpicker.min.js"></script>
+<script>
+  function limpiarFormulario() {
+    document.getElementById("guardar-registro").reset();
+  }
+</script>
 
 </body>
 </html>

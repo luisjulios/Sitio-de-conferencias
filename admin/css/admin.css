@@ -23,10 +23,6 @@
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-
-.content-wrapper {
-  background-image: url(https://image.freepik.com/free-photo/gold-shiny-background-with-variating-hues_1258-28396.jpg);
-}
 ::-webkit-scrollbar{
   width: 10px;
   background-color: #F5F5F5;
@@ -80,4 +76,7 @@ font-size: 30px;
 }
 div.box {
 padding: 10px;
+}
+div.small-box {
+  border-radius: 10px;
 }

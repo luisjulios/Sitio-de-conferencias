@@ -9,7 +9,6 @@
   include_once 'templates/barra.php';
   include_once 'templates/navegacion.php';
 
-
   $sql = "SELECT * FROM `invitados` WHERE `invitado_id` = $id";
   $resultado = $conn->query($sql);
   $invitados = $resultado->fetch_assoc();

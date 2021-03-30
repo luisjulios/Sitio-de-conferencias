@@ -12,7 +12,7 @@ include_once 'templates/navegacion.php'
       <h1>Agregar eventos<br><small>Llena el formulario para crear un evento.</small></h1>
     </section>
   <div class="row">
-  <div class="col-xs-8">
+  <div class="col-lg-6 col-xs-12">
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->

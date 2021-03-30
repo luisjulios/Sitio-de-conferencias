@@ -12,7 +12,7 @@ include_once 'templates/navegacion.php'
       <h1>Agregar Invitado<br><small>Llena el formulario para crear un invitado.</small></h1>
     </section>
   <div class="row">
-  <div class="col-xs-6">
+  <div class="col-lg-6 col-xs-12">
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->

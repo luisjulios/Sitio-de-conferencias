@@ -1,3 +1,20 @@
+<?php
+    // Definir un nombre para cachear
+    $archivo = basename($_SERVER['PHP_SELF']);
+    $pagina = str_replace(".php", "", $archivo);
+
+    // Definir archivo para cachear (puede ser .php también)
+	$archivoCache = 'cache/'.$pagina.'.php';
+	// Cuanto tiempo deberá estar este archivo almacenado
+	$tiempo = 3;
+	// Checar que el archivo exista, el tiempo sea el adecuado y muestralo
+	if (file_exists($archivoCache) && time() - $tiempo < filemtime($archivoCache)) {
+   	include($archivoCache);
+    	exit;
+	}
+	// Si el archivo no existe, o el tiempo de cacheo ya se venció genera uno nuevo
+	ob_start();
+?>
 <!doctype html>
 <html class="no-js" lang="">
 <head>
@@ -8,7 +25,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
-  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/all.min.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans&display=swap" rel="stylesheet">
@@ -18,7 +35,7 @@
   if ($pagina == "invitados" || $pagina == "index") {
     echo '<link rel="stylesheet" href="css/colorbox.css">';
   } else if ($pagina == 'conferencia') {
-    echo '<link rel="stylesheet" href="css/lightbox.css">';
+    echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA==" crossorigin="anonymous" />';
   }
   ?>
   <link rel="stylesheet" href="css/main.css">
@@ -47,7 +64,7 @@
               <p class="fecha"><i class="fas fa-calendar-week"></i> 10-12 Dic</p>
               <p class="ciudad"><i class="fas fa-map-marker-alt"></i> Santiago de Chile</p>
             </div>
-            <h1 class="nombre-sitio">GdlWebCamp</h1>
+            <h1 class="nombre-sitio">GdlWbCamp</h1>
             <p class="slogan">La mejor conferencia de <span>Diseño Web</span></p>
           </div><!--Informacion evento-->         
         </div>

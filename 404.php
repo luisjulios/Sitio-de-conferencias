@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Page Not Found</title>
+  <title>Página no encontrada</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     * {
@@ -21,13 +21,14 @@
     }
 
     body {
+      background-color: #333;
       display: table-cell;
       vertical-align: middle;
       margin: 2em auto;
     }
 
     h1 {
-      color: #555;
+      color: #fe4918;
       font-size: 2em;
       font-weight: 400;
     }
@@ -54,8 +55,11 @@
 </head>
 
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+  <h1>Página no encontrada</h1>
+  <br>
+  <p>Puedes volver dando click en el logo.</p>
+  <br>
+  <a href="index.php"><img src="img/logo.svg" alt=""></a></a>
 </body>
 
 </html>

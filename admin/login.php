@@ -7,7 +7,7 @@ if ($cerrar_sesion) {
 include_once 'funciones/funciones.php'; 
 include_once 'templates/header.php'; 
 ?>
-<body class="hold-transition login-page" style="background-image: url(https://image.freepik.com/free-vector/wide-abstract-white-grey-background-3d-paper-pattern-with-stars-geometric_108964-1551.jpg)">
+<body class="hold-transition login-page">
 
 <div class="login-box">
   <div class="login-logo">

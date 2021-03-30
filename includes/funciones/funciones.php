@@ -6,18 +6,17 @@ function productos_json(&$boletos, &$camisas = 0, &$etiquetas = 0) {
         unset($boletos['dos_dias']['precio']);
 
         $total_boletos = array_combine($dias, $boletos);
-        return json_encode($total_boletos);
 
         $camisas = (int) $camisas;
         if ($camisas > 0):
-          $json['camisas'] = $camisas;
+          $total_boletos['camisas'] = $camisas;
         endif;
         $etiquetas = (int) $etiquetas;
         if ($etiquetas > 0):
-          $json['etiquetas'] = $etiquetas;
+          $total_boletos['etiquetas'] = $etiquetas;
         endif;
 
-        return json_encode($json);
+        return json_encode($total_boletos);
 }
 
 function eventos_json($eventos) {

@@ -17,7 +17,8 @@ $(document).ready(function(){
               title: 'Se guardó correctamente!',
               showConfirmButton: false,
               timer: 1200
-            })
+            }).then(document.getElementById("guardar-registro").reset());
+            
           } else {
             Swal.fire({
               position: 'center',
@@ -52,7 +53,7 @@ $(document).ready(function(){
               title: 'Se guardó correctamente!',
               showConfirmButton: false,
               timer: 1200
-            })
+            }).then(document.getElementById("guardar-registro").reset());
           } else {
             Swal.fire({
               position: 'center',

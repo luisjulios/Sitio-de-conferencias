@@ -31,13 +31,14 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Dashboard</a></li>
+            <li><a href="dashboard.php"><i class="fa fa-circle-o"></i> Dashboard</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-calendar"></i>
             <span>Eventos</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-evento.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
@@ -48,6 +49,7 @@
           <a href="#">
             <i class="fa fa-book"></i>
             <span>Categoria Eventos</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-categorias.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
@@ -58,6 +60,7 @@
           <a href="#">
             <i class="fa fa-user-circle"></i>
             <span>Invitados</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-invitados.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
@@ -68,6 +71,7 @@
           <a href="#">
             <i class="fa fa-address-card"></i>
             <span>Registrados</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-registrados.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
@@ -79,6 +83,7 @@
           <a href="#">
             <i class="fa fa-users"></i>
             <span>Administradores</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="lista-admin.php"><i class="fa fa-list-ul"></i> Ver todos</a></li>
@@ -90,6 +95,7 @@
           <a href="#">
             <i class="fa fa-comments"></i>
             <span>Testimoniales</span>
+            <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-list-ul"></i> Ver todos</a></li>

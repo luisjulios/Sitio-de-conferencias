@@ -1,9 +1,17 @@
 <?php 
+  $id = $_GET['id'];
+  if(!filter_var($id, FILTER_VALIDATE_INT)):
+    die("Error");
+      else :
 include_once 'funciones/sesiones.php';
 include_once 'funciones/funciones.php'; 
 include_once 'templates/header.php'; 
 include_once 'templates/barra.php';
-include_once 'templates/navegacion.php'
+include_once 'templates/navegacion.php';
+
+$sql = "SELECT * FROM `registrados` WHERE `ID_Registrado` = $id";
+$resultado = $conn->query($sql);
+$registrados = $resultado->fetch_assoc();
 ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -12,31 +20,35 @@ include_once 'templates/navegacion.php'
       <h1>Agregar registro de usuario manual<br><small>Llena el formulario para crear un registrado al evento.</small></h1>
     </section>
   <div class="row">
-  <div class="col-lg-10 col-xs-12">
+  <div class="col-md-12">
     <!-- Main content -->
     <section class="content">
       <!-- Default box -->
       <div class="box" style="border-radius: 15px;">
         <div class="box-header with-border">
-          <h3 class="box-title">Crear Registrado</h3>
+          <h3 class="box-title">Editando <?php echo $registrados['nombre_registrado'] . " " . $registrados['apellido_registrado']; ?></h3>
         </div>
         <div class="box-body">
             <!-- form start -->
-            <form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-registrado.php">
+            <form class="editar-registrado" role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-registrado.php">
               <div class="box-body">
                 <div class="form-group campo">
                   <label for="nombre">Nombre:</label>
-                  <input type="text" class="form-control" id="nombre" name="nombre"  placeholder="Nombre" autocomplete="username">
+                  <input type="text" class="form-control" id="nombre" name="nombre"  placeholder="Nombre" autocomplete="username" value="<?php echo $registrados['nombre_registrado']; ?>">
                 </div>
                 <div class="form-group campo">
                   <label for="apellido">Apellido:</label>
-                  <input type="text" class="form-control" id="apellido" name="apellido"  placeholder="Apellido" autocomplete="username">
+                  <input type="text" class="form-control" id="apellido" name="apellido"  placeholder="Apellido" autocomplete="username" value="<?php echo $registrados['apellido_registrado']; ?>">
                 </div>
                 <div class="form-group campo">
                   <label for="email">Correo:</label>
-                  <input type="email" class="form-control" id="email" name="email"  placeholder="Email" autocomplete="username">
+                  <input type="email" class="form-control" id="email" name="email"  placeholder="Email" autocomplete="username" value="<?php echo $registrados['email_registrado']; ?>">
                 </div>
                 <div id="error"></div> 
+                <?php 
+                  $pedido = $registrados['pases_articulos'];
+                  $boletos = json_decode($pedido, true);
+                ?>
                 <div class="form-group">
                 <div id="paquetes" class="paquetes">
                   <h3>Elige el número de boletos</h3>
@@ -52,7 +64,7 @@ include_once 'templates/navegacion.php'
                         </ul>
                         <div class="orden">
                           <label for="pase_dia">Boletos deseados:</label>
-                          <input type="number" class="form-control" min="0" id="pase_dia" size="3" name="boletos[un_dia][cantidad]" placeholder="0">
+                          <input value="<?php echo $boletos['pase_dia']['cantidad'] ?>" type="number" class="form-control" min="0" id="pase_dia" size="3" name="boletos[un_dia][cantidad]" placeholder="0">
                           <input type="hidden" value="30" name="boletos[un_dia][precio]">
                         </div>
                       </div>
@@ -68,7 +80,7 @@ include_once 'templates/navegacion.php'
                         </ul>
                         <div class="orden">
                           <label for="pase_completo">Boletos deseados:</label>
-                          <input type="number" class="form-control" min="0" id="pase_completo" size="3" name="boletos[completo][cantidad]" placeholder="0">
+                          <input value="<?php echo $boletos['pase_completo']['cantidad'] ?>" type="number" class="form-control" min="0" id="pase_completo" size="3" name="boletos[completo][cantidad]" placeholder="0">
                           <input type="hidden" value="50" name="boletos[completo][precio]">
                         </div>
                       </div>
@@ -84,7 +96,7 @@ include_once 'templates/navegacion.php'
                         </ul>
                         <div class="orden">
                           <label for="pase_dosdias">Boletos deseados:</label>
-                          <input type="number" class="form-control" min="0" id="pase_dosdias" size="3" name="boletos[dos_dias][cantidad]" placeholder="0">
+                          <input value="<?php echo $boletos['pase_dosdias']['cantidad'] ?>" type="number" class="form-control" min="0" id="pase_dosdias" size="3" name="boletos[dos_dias][cantidad]" placeholder="0">
                           <input type="hidden" value="45" name="boletos[dos_dias][precio]">
                         </div>
                       </div>
@@ -95,7 +107,8 @@ include_once 'templates/navegacion.php'
                 <h3>Elige los talleres</h3>
                 <div class="caja row">
                 <?php 
-                
+                  $eventos = $registrados['talleres_registrados'];
+                  $id_eventos_registrados = json_decode($eventos, true);
                 try {
                   $sql = " SELECT eventos.*, categoria_evento.cat_evento, invitados.nombre_invitado, invitados.apellido_invitado ";
                   $sql .= " FROM eventos ";
@@ -136,7 +149,7 @@ include_once 'templates/navegacion.php'
                         <p><?php echo $tipo ?></p>
                         <?php foreach ($evento_dia as $evento) { ?>
                           <label>
-                          <input type="checkbox" class="flat-red" name="registro_evento[]" id="<?php echo $evento['id']; ?>" value="<?php echo $evento['id']; ?>">
+                          <input <?php echo (in_array($evento['id'], $id_eventos_registrados['eventos']) ? 'checked' : '' ); ?> type="checkbox" class="flat-red" name="registro_evento[]" id="<?php echo $evento['id']; ?>" value="<?php echo $evento['id']; ?>">
                           <time><?php echo $evento['hora']; ?></time> <?php echo $evento['nombre_evento']; ?>
                           <span class="autor"><?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado']; ?></span>
                           </label>
@@ -155,12 +168,12 @@ include_once 'templates/navegacion.php'
                   <div class="extras col-md-4">
                     <div class="orden">
                       <label for="camisa_evento">Camisa del evento $10 <small>(promoción 7% dcto.)</small></label>
-                      <input type="number" class="form-control" min="0" id="camisa_evento" name="pedido_extra[camisas][cantidad]" size="3" placeholder="0">
+                      <input value="<?php echo $boletos['camisas'] ?>" type="number" class="form-control" min="0" id="camisa_evento" name="pedido_extra[camisas][cantidad]" size="3" placeholder="0">
                       <input type="hidden" value="10" name="pedido_extra[camisas][precio]">
                     </div><!--#orden-->
                     <div class="orden">
                       <label for="etiquetas">Paquete de 10 etiquetas $2<small>(HTML5, CSS3, JavaScript, Chrome)</small></label>
-                      <input type="number" class="form-control" min="0" id="etiquetas" name="pedido_extra[etiquetas][cantidad]" size="3" placeholder="0">
+                      <input value="<?php echo $boletos['etiquetas'] ?>" type="number" class="form-control" min="0" id="etiquetas" name="pedido_extra[etiquetas][cantidad]" size="3" placeholder="0">
                       <input type="hidden" value="2" name="pedido_extra[etiquetas][precio]">
 
                     </div><!--#orden-->
@@ -168,9 +181,9 @@ include_once 'templates/navegacion.php'
                       <label for="regalo">Seleccione un regalo:</label><br>
                       <select id="regalo" class="form-control seleccionar" name="regalo" >
                         <option value="">-Seleccione un regalo-</option>
-                        <option value="1">Pulsera</option>
-                        <option value="2">Etiquetas</option>
-                        <option value="3">Plumas</option>
+                        <option value="1" <?php echo ($registrados['regalo'] == 1 ? 'selected' : ''); ?>>Pulsera</option>
+                        <option value="2" <?php echo ($registrados['regalo'] == 2 ? 'selected' : ''); ?>>Etiquetas</option>
+                        <option value="3" <?php echo ($registrados['regalo'] == 3 ? 'selected' : ''); ?>>Plumas</option>
                       </select>
                     </div><!--#orden-->
                     <br>
@@ -179,12 +192,11 @@ include_once 'templates/navegacion.php'
                   <div class="total col-md-8">
                     <p>Resumen:</p>
                     <div id="lista-productos"></div>
+                    <p>Total previamente pagado: <?php echo $registrados['total_pagado'];?></p>
                     <p>Total:</p>
                     <div id="suma-total">
 
                     </div>
-                    <input type="hidden" name="total_pedido" id="total_pedido">
-                    <input type="hidden" name="total_descuento" id="total_descuento" value="total_descuento">
                   </div><!--#total-->
                 </div><!--#caja-->
             </div><!--#resumen-->
@@ -193,7 +205,11 @@ include_once 'templates/navegacion.php'
               </div>
               <!-- /.box-body -->
               <div class="box-footer">
-                <input type="hidden" name="registro" value="nuevo">
+                <input type="hidden" name="registro" value="actualizar">
+                <input type="hidden" name="total_pedido" id="total_pedido">
+                <input type="hidden" name="total_descuento" id="total_descuento" value="total_descuento">
+                <input type="hidden" name="id_registro" value="<?php echo $registrados['ID_Registrado'];?>">
+                <input type="hidden" name="fecha_registro" value="<?php echo $registrados['fecha_registro'];?>">
                 <button type="submit" class="btn btn-primary" id="btnRegistro" >Guardar</button>
               </div>
             </form>        
@@ -209,4 +225,7 @@ include_once 'templates/navegacion.php'
   </div>
   <!-- /.content-wrapper -->
 
-<?php include_once 'templates/footer.php'; ?>
+<?php 
+include_once 'templates/footer.php'; 
+  endif;
+?>
